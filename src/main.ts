@@ -27,5 +27,10 @@ console.log(startString)
 
 let g:Array<number> = [1, 2, 3];
 
+console.log(g);
 
-console.log(g)
+const helloObj = (user: {name: string, age: number}) => {
+  console.log('hello', user.name, user.age)
+}
+
+helloObj({name: 'sasha', age: Number('23')})
