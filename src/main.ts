@@ -13,3 +13,10 @@ const greeting = (name:string, age:number):boolean => {
 const b:boolean = greeting('sasha', 23);
 
 console.log(b)
+
+const newDate = new Date().toDateString();
+const c:Date = new Date();
+console.log(newDate);
+
+const str = 'a b d';
+console.log(str.split(' '))
