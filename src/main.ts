@@ -159,3 +159,8 @@ const childPasha: Child = {
 };
 // childPasha.name = 'gosha'
 console.log(childPasha);
+
+// Generic
+const getter = <T>(data: T): T => data
+
+getter<number>(10);
