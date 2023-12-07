@@ -1,36 +1,61 @@
-let a:string = 'hello';
+let a: string = "hello";
 
-a = 'sdfsdf';
+a = "sdfsdf";
 
-console.log(a)
+console.log(a);
 
+const greeting = (name: string, age: number): boolean => {
+    console.log("hello", name, age);
+    return true;
+};
 
-const greeting = (name:string, age:number):boolean => {
-  console.log('hello', name, age)
-  return true
-}
+const b: boolean = greeting("sasha", 23);
 
-const b:boolean = greeting('sasha', 23);
-
-console.log(b)
+console.log(b);
 
 const newDate = new Date().toDateString();
-const c:Date = new Date();
+const c: Date = new Date();
 console.log(newDate);
 
-const str:string = 'a b d';
-console.log(str.split(' '));
+const str: string = "a b d";
+console.log(str.split(" "));
 
 const startString = `shfksd ${str}`;
-console.log(startString)
+console.log(startString);
 
-
-let g:Array<number> = [1, 2, 3];
+let g: Array<number> = [1, 2, 3];
 
 console.log(g);
 
-const helloObj = (user: {name: string, age: number}) => {
-  console.log('hello', user.name, user.age)
-}
+const helloObj = (user: { name: string; age: number }) => {
+    console.log("hello", user.name, user.age);
+};
 
-helloObj({name: 'sasha', age: Number('23')})
+helloObj({ name: "sasha", age: Number("23") });
+
+
+// Types
+type User = {
+    name: string;
+    age: number;
+};
+function printUser(usr: User) {
+    console.log(usr.name, usr.age);
+}
+printUser({ name: "Gosha", age: 23 });
+
+// Interfaces can extends
+interface Car {
+    model: string;
+}
+interface Hachback extends Car{
+    passengers: number;
+}
+const hachback = {
+    model: 'VW',
+    passengers: 5
+}
+printCar(hachback)
+function printCar (car: Hachback) {
+    console.log(car.model, car.passengers)
+}
