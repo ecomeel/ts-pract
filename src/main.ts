@@ -115,6 +115,18 @@ class UserClass {
     ) {
         this.nickname = nickname;
     }
+
+    setNickname(nickname: string) {
+        this.nickname = nickname
+    }
+
+    set myNickname(nickname: string) {
+        this.nickname = nickname
+    }
+
 }
 const userSasha = new UserClass("Ecomeel", "Sasha", 23, 12345);
+userSasha.setNickname('Eco');
+console.log(userSasha);
+userSasha.myNickname = 'ecom';
 console.log(userSasha)
