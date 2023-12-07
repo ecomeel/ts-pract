@@ -66,10 +66,10 @@ function printCar(car: Hachback) {
 // <------------------------------->
 const voidFunctionReturn = (): void => {
     console.log("void function return!");
-}
+};
 voidFunctionReturn();
 
-let anyArray: any[] = [1, 'sdf', true];
+let anyArray: any[] = [1, "sdf", true];
 console.log(anyArray);
 
 // Enum
@@ -77,21 +77,44 @@ enum Directions {
     Up,
     Down = 5,
     Left,
-    Right
+    Right,
 }
 console.log(Directions.Down);
+console.log(Directions[6]);
 
 // Never
-const msg = 'hello';
+const msg = "hello";
 const error = (msg: string): never => {
-    throw new Error(msg)
-}
+    throw new Error(msg);
+};
 // error(msg)
 
 // Object
 const create = (obj: object | null): void => {
-    console.log(obj)
-}
-create({first: 1});
+    console.log(obj);
+};
+create({ first: 1 });
 create(null);
+let userA: { name: string; age: number };
+userA = {
+    name: "Misha",
+    age: 15,
+};
 
+// Classes
+class UserClass {
+    // first way
+    private nickname: string;
+
+    constructor(
+        nickname: string,
+        // second way
+        public name: string,
+        protected age: number,
+        readonly pass: number
+    ) {
+        this.nickname = nickname;
+    }
+}
+const userSasha = new UserClass("Ecomeel", "Sasha", 23, 12345);
+console.log(userSasha)
