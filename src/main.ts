@@ -117,16 +117,45 @@ class UserClass {
     }
 
     setNickname(nickname: string) {
-        this.nickname = nickname
+        this.nickname = nickname;
     }
 
     set myNickname(nickname: string) {
-        this.nickname = nickname
+        this.nickname = nickname;
     }
-
 }
 const userSasha = new UserClass("Ecomeel", "Sasha", 23, 12345);
-userSasha.setNickname('Eco');
+userSasha.setNickname("Eco");
 console.log(userSasha);
-userSasha.myNickname = 'ecom';
-console.log(userSasha)
+userSasha.myNickname = "ecom";
+console.log(userSasha);
+
+// Namespace
+// Old version
+// namespace NamespaceOne {
+//     export const a: number = 15;
+//     const PI = 3.14;
+//     export const b: number = 1 + PI
+// }
+// console.log(NamespaceOne.a)
+// console.log(NamespaceOne.PI) UNDERFIND
+
+import { getPass, SECRET } from "./utils";
+const aSecret: string = SECRET;
+const bGetPass = getPass("sasha", aSecret);
+console.log(bGetPass);
+
+// Interface
+interface Child {
+    readonly name: string;
+    age: number;
+    sex: string;
+    [propName: string]: any;
+}
+const childPasha: Child = {
+    name: "Pasha",
+    age: 6,
+    sex: "male",
+};
+// childPasha.name = 'gosha'
+console.log(childPasha);
