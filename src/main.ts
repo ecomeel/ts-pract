@@ -68,3 +68,30 @@ const voidFunctionReturn = (): void => {
     console.log("void function return!");
 }
 voidFunctionReturn();
+
+let anyArray: any[] = [1, 'sdf', true];
+console.log(anyArray);
+
+// Enum
+enum Directions {
+    Up,
+    Down = 5,
+    Left,
+    Right
+}
+console.log(Directions.Down);
+
+// Never
+const msg = 'hello';
+const error = (msg: string): never => {
+    throw new Error(msg)
+}
+// error(msg)
+
+// Object
+const create = (obj: object | null): void => {
+    console.log(obj)
+}
+create({first: 1});
+create(null);
+
