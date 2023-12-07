@@ -33,7 +33,6 @@ const helloObj = (user: { name: string; age: number }) => {
 
 helloObj({ name: "sasha", age: Number("23") });
 
-
 // Types
 type User = {
     name: string;
@@ -48,14 +47,24 @@ printUser({ name: "Gosha", age: 23 });
 interface Car {
     model: string;
 }
-interface Hachback extends Car{
+interface Hachback extends Car {
     passengers: number;
 }
 const hachback = {
-    model: 'VW',
-    passengers: 5
+    model: "VW",
+    passengers: 5,
+    // wheels: 4
+};
+interface Car {
+    wheels?: number;
 }
-printCar(hachback)
-function printCar (car: Hachback) {
-    console.log(car.model, car.passengers)
+printCar(hachback);
+function printCar(car: Hachback) {
+    console.log(car.model, car.passengers);
 }
+
+// <------------------------------->
+const voidFunctionReturn = (): void => {
+    console.log("void function return!");
+}
+voidFunctionReturn();
